@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#define N 100
+
+int menu();  
+void allStu();      //显示所有学生信息
+void allStu()
+{
+    system("clear");
+    //system("cls");
+	//printf("%s","\033[1H\033[2J");
+    printf("序号\t学号\t\t\t姓名\t\t体温\t专业\t\n");
+    //选择排序
+    for(int i=0;i<n;i++)
+	{
+		int max=i;
+		for(int j=i+1;j<n;j++)
+		{
+			if(atoi(s[j].id)<atoi(s[max].id))
+			{
+				max=j;
+			}
+		}
+			if(max!=i)
+			{
+			    temp = s[i];
+			    s[i] = s[max];
+			    s[max] = temp;
+			}
+	}
+    for(int i=0;i<n;i++)
+    {
+        printf("%d\t%s\t\t%s\t\t%s\t%s\t\n",i+1,s[i].id,s[i].name,s[i].tem,s[i].major);
+    }
+    getchar();
+    getchar();
+}

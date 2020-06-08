@@ -1,0 +1,77 @@
+void delStu()
+{
+    system("clear");
+    //system("cls");
+	//printf("%s","\033[1H\033[2J");
+    puts("***************请选择删除方式**************");
+    puts("**                                       **");
+    puts("**              1按学号删除              **");
+    puts("**              2按姓名删除              **");
+    puts("**                                       **");
+    puts("**                OIDCAT                 **");
+    puts("*******************************************");
+    puts("请键入选项：");int choose;
+    scanf("%d",&choose);
+    switch(choose)
+    {
+    case 1:
+        {
+            char num[10];
+            puts("请输入删除学号：");
+            scanf("%s",num);
+            for(int i=0;i<n;i++)
+            {
+                if(strcmp(s[i].id,num)==0)
+                {
+                    for(;i<n;i++)
+                    {
+                        strcpy(s[i].id,s[i+1].id);
+                        strcpy(s[i].name,s[i+1].name);
+                        strcpy(s[i].tem,s[i+1].tem);
+                        strcpy(s[i].major,s[i+1].major);
+                    }
+					sign = 1;
+                    n -= 1;
+                    puts("删除成功!");
+                }
+            }
+			if(sign==0){
+				puts("无此学号！请核对！");
+			}
+			sign = 0;
+            getchar();
+            getchar();
+            break;
+        }
+    case 2:
+        {
+            char name[20];
+            puts("请输入删除姓名：");
+            scanf("%s",name);
+            for(int i=0;i<n;i++)
+            {
+                if(strcmp(s[i].name,name)==0)
+                {
+                    for(;i<n;i++)
+                    {
+                        strcpy(s[i].id,s[i+1].id);
+                        strcpy(s[i].name,s[i+1].name);
+                        strcpy(s[i].tem,s[i+1].tem);
+                        strcpy(s[i].major,s[i+1].major);
+                    }
+					sign = 1;
+                    n -= 1;
+                    puts("删除成功!");
+                }
+            }
+			if(sign==0){
+				puts("无此姓名！请核对！");
+			}
+			sign = 0;
+            getchar();
+            getchar();
+            break;
+        }
+    default:puts("输入错误");break;
+    }
+}

@@ -1,0 +1,30 @@
+void changeStu() {
+    system ("clear");
+    //system("cls");
+	//printf("%s","\033[1H\033[2J");
+    char num[10];
+    puts ("请输入需要修改学号：");
+    scanf ("%s",num);
+    for (int i = 0;i < n;i++) {
+        if (strcmp(s[i].id,num) == 0) {
+			sign = 1;
+            puts ("已定位到待修改参数,请修改:");
+            printf ("修改学号为："); scanf ("%s",s[i].id);
+            getchar();
+            printf ("修改学生姓名为："); scanf ("%s",s[i].name);
+            getchar();
+            printf ("修改学生体温为："); scanf ("%s",s[i].tem);
+            getchar();
+            printf ("修改学生专业为："); scanf ("%s",s[i].major);
+            puts ("修改成功!");
+        }
+    }
+	if (sign == 0) {
+		puts ("无此学号！请核对！");
+	}
+	sign = 0;
+    getchar();
+    getchar();
+}
+
+stu temp;

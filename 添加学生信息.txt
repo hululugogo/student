@@ -1,0 +1,22 @@
+void addStu()  //添加重名学生待解决
+{
+    system("clear");
+    //system("cls");
+	//printf("%s","\033[1H\033[2J");
+    int person,i;
+    printf("此次操作需要输入多少名学生："); scanf("%d",&person);
+    for(i=0;i<person;i++){
+        printf("请输入第%d个学生信息\n",i+1);
+        printf("请输入学生学号\n学号："); scanf("%s",s[n+i].id);
+        getchar();
+        printf("请输入学生姓名\n姓名："); scanf("%s",s[n+i].name);
+        getchar();
+        printf("请输入学生体温\n体温："); scanf("%s",s[n+i].tem);
+        getchar();
+        printf("请输入学生专业\n专业："); scanf("%s",s[n+i].major);
+    }
+    n += i;
+    puts("over");
+    getchar();
+    getchar();
+}

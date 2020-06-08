@@ -1,0 +1,59 @@
+void findStu() {
+    system("clear");
+    //system("cls");
+	//printf("%s","\033[1H\033[2J");
+    puts ("***************请选择查找方式*************");
+    puts ("**                                      **");
+    puts ("**              1按学号查找             **");
+    puts ("**              2按姓名查找             **");
+    puts ("**                                      **");
+    puts ("**                OIDCAT                **");
+    puts ("******************************************");
+    puts ("请键入选项：");int choose;
+    scanf ("%d",&choose);
+    switch (choose) {
+    case 1: {
+            char num[10];
+            puts ("请输入查找学号：");
+            scanf ("%s",num);
+            puts ("查找结果如下");
+            //printf ("序号\t学号\t姓名\t体温\t专业\t\n");
+            for (int i = 0;i < n;i++) {
+                if (strcmp(s[i].id,num) == 0) {
+					printf ("序号\t学号\t\t\t姓名\t\t体温\t专业\t\n");
+                    printf ("%d\t%s\t\t%s\t\t%s\t%s\t\n",i+1,s[i].id,s[i].name,s[i].tem,s[i].major);
+					sign = 1;
+                }
+            }
+			if (sign==0) {
+				puts ("无此学号！请核对！");
+			}
+			sign = 0;
+            getchar();
+            getchar();
+            break;
+        }
+    case 2:{
+            char name[20];
+            puts ("请输入查找姓名：");
+            scanf ("%s",name);
+            puts ("查找结果如下");
+            //printf("序号\t学号\t姓名\t体温\t专业\t\n");
+            for (int i = 0;i < n;i++) {
+                if (strcmp(s[i].name,name) == 0) {
+					printf ("序号\t学号\t\t\t姓名\t\t体温\t专业\t\n");
+                    printf ("%d\t%s\t\t%s\t\t%s\t%s\t\n",i+1,s[i].id,s[i].name,s[i].tem,s[i].major);
+				sign = 1;
+				}
+            }
+			if (sign == 0){
+				puts ("无此姓名！请核对！");
+			}
+			sign = 0;
+            getchar();
+            getchar();
+            break;
+        }
+    default:puts ("输入错误");break;
+    }
+}
